@@ -10,10 +10,10 @@ import store from '../../store';
 import config from '../configstore';
 import taskRunner from '../taskrunner';
 import {
-    //GrblController,
+    GrblController,
     MarlinController,
-    //SmoothieController,
-    //TinyGController
+    SmoothieController,
+    TinyGController
 } from '../../controllers';
 import { GRBL } from '../../controllers/Grbl/constants';
 import { MARLIN } from '../../controllers/Marlin/constants';

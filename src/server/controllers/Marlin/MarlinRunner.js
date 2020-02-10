@@ -77,7 +77,7 @@ class MarlinRunner extends events.EventEmitter {
                 this.settings = nextSettings; // enforce change
             }
 
-            if(extruderCount === 0){
+            if (extruderCount === 0) {
                 delete this.state.pos.e;
             }
 
@@ -87,7 +87,7 @@ class MarlinRunner extends events.EventEmitter {
         if (type === MarlinLineParserResultPosition) {
             let pos = payload.pos;
 
-            if(extruderCount === 0){
+            if (this.settings.extruderCount === 0) {
                 delete pos.E;
             }
 

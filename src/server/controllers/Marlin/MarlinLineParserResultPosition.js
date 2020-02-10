@@ -11,7 +11,8 @@ class MarlinLineParserResultPosition {
         const payload = {
             pos: {}
         };
-        const pattern = /((X|Y|Z|E):[0-9\.\-]+)+/gi;
+        //const pattern = /((X|Y|Z|E):[0-9\.\-]+)+/gi;
+        const pattern = /((X|Y|Z):[0-9\.\-]+)+/gi;
         const params = r[0].match(pattern);
 
         for (let param of params) {

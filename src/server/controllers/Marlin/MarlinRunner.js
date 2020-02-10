@@ -77,25 +77,15 @@ class MarlinRunner extends events.EventEmitter {
                 this.settings = nextSettings; // enforce change
             }
 
-            if (extruderCount === 0) {
-                delete this.state.pos.e;
-            }
-
             this.emit('firmware', payload);
             return;
         }
         if (type === MarlinLineParserResultPosition) {
-            let pos = payload.pos;
-
-            if (this.settings.extruderCount === 0) {
-                delete pos.E;
-            }
-
             const nextState = {
                 ...this.state,
                 pos: {
                     ...this.state.pos,
-                    ...pos
+                    ...payload.pos
                 }
             };
 

@@ -444,7 +444,7 @@ class MarlinController {
 
                 const { sent, received } = this.sender.state;
 
-                if (line[0] === '%') {
+                if (line[0] === '%' || line[0] === '(') {
                     // %wait
                     if (line === WAIT) {
                         log.debug(`Wait for the planner to empty: line=${sent + 1}, sent=${sent}, received=${received}`);

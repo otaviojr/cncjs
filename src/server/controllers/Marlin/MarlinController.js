@@ -345,6 +345,7 @@ class MarlinController {
         // Feeder
         this.feeder = new Feeder({
             dataFilter: (line, context) => {
+                log.debug('feeder: dataFilter');
                 // Remove comments that start with a semicolon `;`
                 line = line.replace(/\s*;.*/g, '').trim();
                 context = this.populateContext(context);
@@ -403,6 +404,7 @@ class MarlinController {
             }
         });
         this.feeder.on('data', (line = '', context = {}) => {
+            log.debug('feeder: data');
             if (this.isClose()) {
                 log.error(`Serial port "${this.options.port}" is not accessible`);
                 return;
@@ -435,6 +437,7 @@ class MarlinController {
         // Sender
         this.sender = new Sender(SP_TYPE_SEND_RESPONSE, {
             dataFilter: (line, context) => {
+                log.debug('sender: dataFilter');
                 // Remove comments that start with a semicolon `;`
                 line = line.replace(/\s*;.*/g, '').trim();
                 context = this.populateContext(context);
@@ -499,6 +502,7 @@ class MarlinController {
             }
         });
         this.sender.on('data', (line = '', context = {}) => {
+            log.debug('sender: data');
             if (this.isClose()) {
                 log.error(`Serial port "${this.options.port}" is not accessible`);
                 return;

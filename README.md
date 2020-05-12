@@ -74,13 +74,14 @@ For a more complete introduction, see the [Introduction](https://github.com/cncj
  4       | Dropped support
  6       | Supported
  8       | Supported
- 10      | Supported
+ 10      | Recommended
+ 12      | Recommended
 
 ## Getting Started
 
 ### Node.js Installation
 
-Node.js 6 or higher is recommended. You can install [Node Version Manager](https://github.com/creationix/nvm) to manage multiple Node.js versions. If you have `git` installed, just clone the `nvm` repo, and check out the latest version:
+Node.js 8 or higher is recommended. You can install [Node Version Manager](https://github.com/creationix/nvm) to manage multiple Node.js versions. If you have `git` installed, just clone the `nvm` repo, and check out the latest version:
 ```
 git clone https://github.com/creationix/nvm.git ~/.nvm
 cd ~/.nvm
@@ -236,11 +237,11 @@ See https://github.com/cncjs/cncjs/issues/242#issuecomment-352294549 for a detai
   "commands": [
     {
       "title": "Update (root user)",
-      "commands": "sudo npm install -g cncjs@latest --unsafe-perm; pkill -a -f cncjs"
+      "commands": "sudo npm install -g cncjs@latest --unsafe-perm; pkill -f cncjs"
     },
     {
       "title": "Update (non-root user)",
-      "commands": "npm install -g cncjs@latest; pkill -a -f cncjs"
+      "commands": "npm install -g cncjs@latest; pkill -f cncjs"
     },
     {
       "title": "Reboot",

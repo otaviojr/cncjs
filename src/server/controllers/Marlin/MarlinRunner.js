@@ -14,8 +14,8 @@ class MarlinRunner extends events.EventEmitter {
         pos: {
             x: '0.000',
             y: '0.000',
-            z: '0.000'
-            //e: '0.000'
+            z: '0.000',
+            e: '0.000'
         },
         modal: {
             motion: 'G0', // G0, G1, G2, G3, G38.2, G38.3, G38.4, G38.5, G80

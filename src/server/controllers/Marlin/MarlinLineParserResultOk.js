@@ -1,7 +1,8 @@
 class MarlinLineParserResultOk {
     // ok
     static parse(line) {
-        const r = line.match(/^ok(.*)+$/);
+        // const r = line.match(/^ok(.*)+$/);
+        const r = line.match(/^ok$/);
         if (!r) {
             return null;
         }

@@ -1040,7 +1040,7 @@ class DisplayPanel extends PureComponent {
                                 <TaskbarButton
                                     disabled={!canZeroOutMachine}
                                     onClick={() => {
-                                        controller.command('gcode', `G28.3 ${axisLabel}0`);
+                                        controller.command('gcode', `G92 ${axisLabel}0`);
                                     }}
                                 >
                                     <Tooltip

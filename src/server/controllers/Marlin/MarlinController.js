@@ -927,18 +927,20 @@ class MarlinController {
 
             log.debug(`Connected to serial port "${port}"`);
 
-            // M115: Get firmware version and capabilities
-            // The response to this will take us to the ready state
-            this.connection.write('M115\n', {
-                source: WRITE_SOURCE_SERVER
-            });
+            setTimeout(() => {
+                // M115: Get firmware version and capabilities
+                // The response to this will take us to the ready state
+                this.connection.write('M115\n', {
+                    source: WRITE_SOURCE_SERVER
+                });
 
-            this.workflow.stop();
+                this.workflow.stop();
 
-            if (this.sender.state.gcode) {
-                // Unload G-code
-                this.command('unload');
-            }
+                if (this.sender.state.gcode) {
+                    // Unload G-code
+                    this.command('unload');
+                }
+            }, 1000);
         });
     }
 

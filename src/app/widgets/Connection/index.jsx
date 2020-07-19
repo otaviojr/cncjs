@@ -241,6 +241,7 @@ class ConnectionWidget extends PureComponent {
 
         // Common baud rates
         const defaultBaudrates = [
+            500000,
             250000,
             115200,
             57600,

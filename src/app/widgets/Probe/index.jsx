@@ -149,7 +149,7 @@ class ProbeWidget extends PureComponent {
                 'G59': 6
             }[wcs] || 0);
             const towardWorkpiece = includes(['G38.2', 'G38.3'], probeCommand);
-            const posname = `pos${probeAxis.toLowerCase()}`;
+            //const posname = `pos${probeAxis.toLowerCase()}`;
             const tloProbeCommands = [
                 gcode('; Cancel tool length offset'),
                 // Cancel tool length offset
@@ -171,8 +171,9 @@ class ProbeWidget extends PureComponent {
 
                 // Apply touch plate height with tool length offset
                 gcode('; Set tool length offset'),
-                gcode('G43.1', {
-                    [probeAxis]: towardWorkpiece ? `[${posname}-${touchPlateHeight}]` : `[${posname}+${touchPlateHeight}]`
+                gcode('G92', {
+                    //[probeAxis]: towardWorkpiece ? `[${posname}-${touchPlateHeight}]` : `[${posname}+${touchPlateHeight}]`
+                    [probeAxis]: towardWorkpiece ? `[${touchPlateHeight}]` : `[${touchPlateHeight}]`
                 }),
 
                 // Retract from the touch plate (use relative distance mode)
